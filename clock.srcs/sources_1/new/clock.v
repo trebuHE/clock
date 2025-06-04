@@ -1,0 +1,48 @@
+module clock (
+    input wire clk_i,       
+    input wire rst_i,
+    input wire fast_i,
+    output reg [4:0] hours_o,
+    output reg [5:0] minutes_o,
+    output reg [5:0] seconds_o,
+    output reg blink_o
+);
+
+    reg [23:0] tick_counter;
+    wire [23:0] tick_limit;
+
+    assign tick_limit = fast_i ? 24'd9999 : 24'd9999999;
+
+    always @(posedge clk_i or posedge rst_i) begin
+        if (rst_i) begin
+            tick_counter <= 0;
+            seconds_o <= 0;
+            minutes_o <= 0;
+            hours_o <= 0;
+            blink_o <= 0;
+        end else begin
+            if (tick_counter == tick_limit) begin
+                tick_counter <= 0;
+                blink_o <= ~blink_o;
+
+                if (seconds_o == 59) begin
+                    seconds_o <= 0;
+                    if (minutes_o == 59) begin
+                        minutes_o <= 0;
+                        if (hours_o == 23)
+                            hours_o <= 0;
+                        else
+                            hours_o <= hours_o + 1;
+                    end else begin
+                        minutes_o <= minutes_o + 1;
+                    end
+                end else begin
+                    seconds_o <= seconds_o + 1;
+                end
+            end else begin
+                tick_counter <= tick_counter + 1;
+            end
+        end
+    end
+
+endmodule

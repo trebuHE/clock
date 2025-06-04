@@ -11,4 +11,19 @@ module top(
     output reg [7:0] led7_an_o
     );
     
+    reg [4:0] hours;
+    reg [5:0] minutes;
+    reg [5:0] seconds;
+    reg blink;
+    
+    clock clock (
+        .clk_i(clk_i),
+        .rst_i(rst_i),
+        .fast_i(button_test_i),
+        .hours_o(hours),
+        .minutes_o(minutes),
+        .seconds_o(seconds),
+        .blink_o(blink)
+        );
+        
 endmodule
