@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 
-
 module top(
     input wire clk_i,
     input wire rst_i,
@@ -47,6 +46,8 @@ module top(
         .clk_i(clk_i),
         .rst_i(rst),
         .fast_i(button_test),
+        .button_min_i(button_min),
+        .button_hr_i(button_hr),
         .hours_o(hours),
         .minutes_o(minutes),
         .seconds_o(seconds),
