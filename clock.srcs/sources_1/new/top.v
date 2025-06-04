@@ -54,4 +54,12 @@ module top(
         .blink_o(blink)
         );
         
+    wire [31:0] leds;
+    encoder encoder (
+        .hours_i(hours),
+        .minutes_i(minutes),
+        .blink_i(blink),
+        .leds_o(leds)
+        ); 
+        
 endmodule
