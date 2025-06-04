@@ -8,10 +8,10 @@ module clock (
     output reg blink_o
 );
 
-    reg [23:0] tick_counter;
-    wire [23:0] tick_limit;
+    reg [26:0] tick_counter;
+    wire [26:0] tick_limit;
 
-    assign tick_limit = fast_i ? 24'd9999 : 24'd9999999;
+    assign tick_limit = fast_i ? 27'd99999 : 27'd99999999;
 
     always @(posedge clk_i or posedge rst_i) begin
         if (rst_i) begin
