@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Jun  4 19:48:29 2025
-# Process ID         : 6948
+# Start of session at: Thu Jun  5 12:26:30 2025
+# Process ID         : 5408
 # Current directory  : D:/Programowanie/Studia/Jezyki HDL/clock/clock.runs/synth_1
 # Command line       : vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file           : D:/Programowanie/Studia/Jezyki HDL/clock/clock.runs/synth_1/top.vds
@@ -19,7 +19,7 @@
 # Host memory        : 34287 MB
 # Swap memory        : 5100 MB
 # Total Virtual      : 39387 MB
-# Available Virtual  : 27678 MB
+# Available Virtual  : 28342 MB
 #-----------------------------------------------------------
 source top.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental {D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/utils_1/imports/synth_1/top.dcp}
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 10228
+INFO: [Synth 8-7075] Helper process launched with PID 6736
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1008.750 ; gain = 471.824
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1005.844 ; gain = 470.262
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'top' [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/top.v:3]
 INFO: [Synth 8-6157] synthesizing module 'debouncer' [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/debouncer.v:2]
@@ -46,43 +46,29 @@ INFO: [Synth 8-6155] done synthesizing module 'debouncer' (0#1) [D:/Programowani
 INFO: [Synth 8-6157] synthesizing module 'clock' [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/clock.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'clock' (0#1) [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/clock.v:1]
 INFO: [Synth 8-6157] synthesizing module 'encoder' [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/encoder.v:1]
-WARNING: [Synth 8-567] referenced signal 'hours_tens' should be on the sensitivity list [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/encoder.v:37]
-WARNING: [Synth 8-567] referenced signal 'hours_ones' should be on the sensitivity list [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/encoder.v:37]
-WARNING: [Synth 8-567] referenced signal 'minutes_tens' should be on the sensitivity list [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/encoder.v:37]
-WARNING: [Synth 8-567] referenced signal 'minutes_ones' should be on the sensitivity list [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/encoder.v:37]
 INFO: [Synth 8-6155] done synthesizing module 'encoder' (0#1) [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/encoder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'led_driver' [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/led_driver.v:1]
+	Parameter COUNTER_LIMIT bound to: 18'b011000011010011111 
+INFO: [Synth 8-226] default block is never used [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/led_driver.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'led_driver' (0#1) [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/led_driver.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/top.v:3]
-WARNING: [Synth 8-3848] Net led7_seg_o in module/entity top does not have driver. [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/top.v:9]
-WARNING: [Synth 8-3848] Net led7_an_o in module/entity top does not have driver. [D:/Programowanie/Studia/Jezyki HDL/clock/clock.srcs/sources_1/new/top.v:10]
-WARNING: [Synth 8-7129] Port led7_seg_o[7] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[6] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[5] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[4] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[3] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[2] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[1] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[0] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[7] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[6] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[5] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[4] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[3] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[2] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[1] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[0] in module top is either unconnected or has no load
+WARNING: [Synth 8-3917] design top has port led7_an_o[7] driven by constant 1
+WARNING: [Synth 8-3917] design top has port led7_an_o[6] driven by constant 1
+WARNING: [Synth 8-3917] design top has port led7_an_o[5] driven by constant 1
+WARNING: [Synth 8-3917] design top has port led7_an_o[4] driven by constant 1
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1112.090 ; gain = 575.164
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1111.762 ; gain = 576.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1112.090 ; gain = 575.164
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1111.762 ; gain = 576.180
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1112.090 ; gain = 575.164
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1111.762 ; gain = 576.180
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1112.090 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1111.762 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -93,48 +79,54 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1206.957 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1202.812 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1206.957 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1202.812 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1206.957 ; gain = 670.031
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1202.812 ; gain = 667.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1206.957 ; gain = 670.031
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1202.812 ; gain = 667.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1206.957 ; gain = 670.031
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1202.812 ; gain = 667.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1206.957 ; gain = 670.031
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 1202.812 ; gain = 667.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   18 Bit       Adders := 1     
 	   2 Input    6 Bit       Adders := 2     
 	   2 Input    5 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 1     
 +---Registers : 
+	               18 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
 	                5 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 15    
 +---Muxes : 
 	   2 Input   27 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
 	   4 Input    7 Bit        Muxes := 1     
 	   7 Input    7 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
 	   2 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -152,42 +144,30 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port led7_seg_o[7] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[6] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[5] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[4] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[3] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[2] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[1] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_seg_o[0] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[7] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[6] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[5] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[4] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[3] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[2] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[1] in module top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port led7_an_o[0] in module top is either unconnected or has no load
+WARNING: [Synth 8-3917] design top has port led7_an_o[7] driven by constant 1
+WARNING: [Synth 8-3917] design top has port led7_an_o[6] driven by constant 1
+WARNING: [Synth 8-3917] design top has port led7_an_o[5] driven by constant 1
+WARNING: [Synth 8-3917] design top has port led7_an_o[4] driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1206.957 ; gain = 670.031
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1202.812 ; gain = 667.230
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1298.031 ; gain = 761.105
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1307.211 ; gain = 771.629
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1298.031 ; gain = 761.105
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:25 . Memory (MB): peak = 1344.172 ; gain = 808.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 1307.621 ; gain = 770.695
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:25 . Memory (MB): peak = 1344.172 ; gain = 808.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -205,37 +185,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1524.961 ; gain = 988.035
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1537.250 ; gain = 1001.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1524.961 ; gain = 988.035
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1537.250 ; gain = 1001.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1524.961 ; gain = 988.035
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1537.250 ; gain = 1001.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1524.961 ; gain = 988.035
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1537.250 ; gain = 1001.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1524.961 ; gain = 988.035
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1537.250 ; gain = 1001.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1524.961 ; gain = 988.035
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1537.250 ; gain = 1001.668
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -248,31 +228,45 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |OBUFT |    16|
-+------+------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    35|
+|3     |LUT1   |     9|
+|4     |LUT2   |    40|
+|5     |LUT3   |     6|
+|6     |LUT4   |    33|
+|7     |LUT5   |    35|
+|8     |LUT6   |    47|
+|9     |MUXF7  |     1|
+|10    |FDCE   |    67|
+|11    |FDRE   |    92|
+|12    |IBUF   |     5|
+|13    |OBUF   |    16|
++------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1524.961 ; gain = 988.035
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1537.250 ; gain = 1001.668
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1524.961 ; gain = 893.168
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 1524.961 ; gain = 988.035
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 1537.250 ; gain = 910.617
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:29 . Memory (MB): peak = 1537.250 ; gain = 1001.668
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1524.961 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1546.434 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1524.961 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1550.086 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 87dcea48
+Synth Design complete | Checksum: 10f83a5e
 INFO: [Common 17-83] Releasing license: Synthesis
-27 Infos, 39 Warnings, 0 Critical Warnings and 0 Errors encountered.
+32 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1524.961 ; gain = 1194.375
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1524.961 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1550.086 ; gain = 1220.113
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1550.086 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/Programowanie/Studia/Jezyki HDL/clock/clock.runs/synth_1/top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Jun  4 19:49:04 2025...
+INFO: [Common 17-206] Exiting Vivado at Thu Jun  5 12:27:08 2025...

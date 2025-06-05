@@ -61,5 +61,21 @@ module top(
         .blink_i(blink),
         .leds_o(leds)
         ); 
+    
+    wire [3:0] led_an_muxed;
+    wire [7:0] led_seg_muxed; 
+    led_driver #(.COUNTER_LIMIT(18'd99999)) led (
+        .clk_i(clk_i),
+        .rst_i(rst),
+        .leds_i(leds),
+        .led7_an_o(led_an_muxed),
+        .led7_seg_o(led_seg_muxed)
+    );
+    
+    always @(*) begin 
+        led7_an_o[7:4] = 4'b1111;
+        led7_an_o[3:0] = led_an_muxed;
+        led7_seg_o = led_seg_muxed;
+    end
         
 endmodule

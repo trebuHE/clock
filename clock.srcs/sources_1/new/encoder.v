@@ -34,7 +34,7 @@ module encoder (
         minutes_ones = minutes_i % 10;
     end
 
-    always @(hours_i, minutes_i, blink_i) begin
+    always @(hours_i, minutes_i, blink_i, hours_tens, hours_ones, minutes_tens, minutes_ones) begin
         leds_o[31:25] = Encode(hours_tens);
         leds_o[23:17] = Encode(hours_ones);
         leds_o[15:9]  = Encode(minutes_tens);
