@@ -1,6 +1,10 @@
 `timescale 1ns / 1ps
 
-module top(
+module top #(
+    parameter DEBOUNCE_TIME_us = 10_000,
+    parameter FAST_TICKS_PER_SEC = 27'd9999999,
+    parameter NORMAL_TICKS_PER_SEC =27'd99999999
+)(
     input wire clk_i,
     input wire rst_i,
     input wire button_hr_i,
@@ -11,28 +15,28 @@ module top(
     );
     
     wire rst;
-    debouncer #(100_000_000, 10000) db_rst (
+    debouncer #(100_000_000, DEBOUNCE_TIME_us) db_rst (
         .clk_i(clk_i),
         .noisy_i(rst_i),
         .debounced_o(rst)
         );
         
     wire button_hr;
-    debouncer #(100_000_000, 10000) db_hr (
+    debouncer #(100_000_000, DEBOUNCE_TIME_us) db_hr (
         .clk_i(clk_i),
         .noisy_i(button_hr_i),
         .debounced_o(button_hr)
         );    
     
     wire button_min;
-    debouncer #(100_000_000, 10000) db_min (
+    debouncer #(100_000_000, DEBOUNCE_TIME_us) db_min (
         .clk_i(clk_i),
         .noisy_i(button_min_i),
         .debounced_o(button_min)
         ); 
         
     wire button_test;
-    debouncer #(100_000_000, 10000) db_test (
+    debouncer #(100_000_000, DEBOUNCE_TIME_us) db_test (
         .clk_i(clk_i),
         .noisy_i(button_test_i),
         .debounced_o(button_test)
@@ -42,7 +46,10 @@ module top(
     wire [5:0] minutes;
     wire [5:0] seconds;
     wire blink;
-    clock clock (
+    clock #(
+        .FAST_TICKS_PER_SEC(FAST_TICKS_PER_SEC),
+        .NORMAL_TICKS_PER_SEC(NORMAL_TICKS_PER_SEC)
+) clock (
         .clk_i(clk_i),
         .rst_i(rst),
         .fast_i(button_test),

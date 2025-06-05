@@ -1,11 +1,10 @@
-`timescale 1ns / 1ps
 module debouncer #(
     parameter CLK_FREQ = 100_000_000,
-    parameter DEBOUNCE_TIME = 10_000
+    parameter DEBOUNCE_TIME = 10_000 // in us
 )(
     input wire clk_i,
     input wire noisy_i,
-    output reg debounced_o
+    output reg debounced_o = 0
 );
 
     localparam integer COUNT_MAX = (CLK_FREQ / 1_000_000) * DEBOUNCE_TIME;
@@ -13,7 +12,6 @@ module debouncer #(
     reg [31:0] counter = 0;
     reg sync_0 = 0;
     reg sync_1 = 0;
-    reg stable_state = 0;
 
     always @(posedge clk_i) begin
         sync_0 <= noisy_i;
@@ -21,15 +19,14 @@ module debouncer #(
     end
 
     always @(posedge clk_i) begin
-        if (sync_1 != stable_state) begin
-            counter <= 0;
-        end else if (counter < COUNT_MAX) begin
+        if (sync_1 != debounced_o) begin
             counter <= counter + 1;
-        end
-
-        if (counter == COUNT_MAX) begin
-            stable_state <= sync_1;
-            debounced_o <= sync_1;
+            if (counter == COUNT_MAX) begin
+                debounced_o <= sync_1;
+                counter <= 0;
+            end
+        end else begin
+            counter <= 0;
         end
     end
 
